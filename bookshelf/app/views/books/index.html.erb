@@ -1,0 +1,36 @@
+<h1>Freeshelf project</h1>
+
+<p><%= link_to 'Add a Book', new_book_path %></p>
+
+<table>
+    <thead>
+        <th>Book Title</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Link</th>
+        <th># of Pages</th>
+        <th>Format</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </thead>
+    <tbody>
+        <% @books.each do |book| %>
+        <tr>
+            <td><%= book.title %></td>
+            <td><%= book.author %></td>
+            <td><%= book.description %></td>
+            <td><%= link_to 'GoodReads Link', "#{book.url}" %></td>
+            <td><%= book.pagination %></td>
+            <td><%= book.format %></td>
+            <td><%= link_to 'Show', book_path(book) %></td>
+            <td><%= link_to 'Edit', edit_book_path(book) %></td>
+            <td><%= link_to 'Delete', book_path(book),
+                        method: :delete,
+                        data: { confirm: 'Are you Sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<p><%= link_to 'Add a Book', new_book_path %></p>
