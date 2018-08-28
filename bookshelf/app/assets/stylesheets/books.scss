@@ -27,6 +27,7 @@
     margin: 0;
     padding: 5px;
     color: #ffffff;
+    text-align: center;
 }
 
 #header_description {
@@ -59,6 +60,7 @@
 .shed,
 .pagination {
     width: 10px;
+    text-align: center;
 }
 
 .format {
@@ -74,4 +76,8 @@
     text-decoration: none;
     display: inline-block;
     font-size: 1rem;
+}
+
+.title {
+    width: 20%;
 }
