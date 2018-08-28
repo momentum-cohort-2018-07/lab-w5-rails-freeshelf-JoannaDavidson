@@ -13,3 +13,56 @@
  *= require_tree .
  *= require_self
  */
+
+.book_index {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #000000;
+    border-radius: 10px;
+}
+
+.book_index_header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    border: 2px solid #000000;
+
+}
+
+.book_index_header_cell {
+    margin: 0;
+    padding: 5px;
+    color: #ffffff;
+}
+
+#header_description {
+
+}
+
+#book_index_detail_wrapper {
+
+}
+
+.book_index_detail_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+ .book_index_detail_cell {
+
+}
+
+.description {
+
+}

@@ -2,35 +2,40 @@
 
 <p><%= link_to 'Add a Book', new_book_path %></p>
 
-<table>
-    <thead>
-        <th>Book Title</th>
-        <th>Author</th>
-        <th>Description</th>
-        <th>Link</th>
-        <th># of Pages</th>
-        <th>Format</th>
-        <th></th>
-        <th></th>
-        <th></th>
-    </thead>
-    <tbody>
-        <% @books.each do |book| %>
-        <tr>
-            <td><%= book.title %></td>
-            <td><%= book.author %></td>
-            <td><%= book.description %></td>
-            <td><%= link_to 'GoodReads Link', "#{book.url}" %></td>
-            <td><%= book.pagination %></td>
-            <td><%= book.format %></td>
-            <td><%= link_to 'Show', book_path(book) %></td>
-            <td><%= link_to 'Edit', edit_book_path(book) %></td>
-            <td><%= link_to 'Delete', book_path(book),
-                        method: :delete,
-                        data: { confirm: 'Are you Sure?' } %></td>
-        </tr>
-        <% end %>
-    </tbody>
-</table>
+<div id="holdings_table" class="book_index">
+    <div class="book_index_header_row">
+        <div id="header_book_title" class="book_index_header_cell">Book Title</div>
+        <div id="header_author" class="book_index_header_cell">Author</div>
+        <div id="header_description" class="book_index_header_cell">Description</div>
+        <div id="header_link" class="book_index_header_cell">Link</div>
+        <div id="header_pagination" class="book_index_header_cell"># of Pages</div>
+        <div id="header_format" class="book_index_header_cell">Format</div>
+        <div id="header_show" class="book_index_header_cell">&nbsp;</div>
+        <div id="header_edit" class="book_index_header_cell">&nbsp;</div>
+        <div id="header_delete" class="book_index_header_cell">&nbsp;</div>
+    </div>
+    <div id="book_index_detail_wrapper"><% @books.each do |book| %>
+        <div class="book_index_detail_row">
+            <div class="book_index_detail_cell title"><%= book.title %></div>
+            <div class="book_index_detail_cell author"><%= book.author %></div>
+            <div class="book_index_detail_cell description"><%= book.description %></div>
+            <div class="book_index_detail_cell link"><%= link_to 'GoodReads Link', "#{book.url}" %></div>
+            <div class="book_index_detail_cell pagination"><%= book.pagination %></div>
+            <div class="book_index_detail_cell format"><%= book.format %></div>
+            <div class="book_index_detail_cell show_link"><%= link_to 'Show', book_path(book) %></div>
+            <div class="book_index_detail_cell edit_link"><%= link_to 'Edit', edit_book_path(book) %></div>
+            <div class="book_index_detail_cell delete_link"><%= link_to 'Delete', book_path(book),
+                            method: :delete,
+                            data: { confirm: 'Are you Sure?' } %></div>
+        </div><% end %>
+    </div>
+</div>
+
+
+<%# content_tag(:div,
+    content_tag(:div, "#{book.title}", class: "book_index_cell", id: "book_title")
+
+ , class: "book_index_row" %>
+
 
 <p><%= link_to 'Add a Book', new_book_path %></p>
