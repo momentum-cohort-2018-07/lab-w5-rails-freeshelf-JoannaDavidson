@@ -1,18 +1,18 @@
-<h1>Freeshelf project</h1>
+<h1>Joanna's Freeshelf project</h1>
 
-<p><%= link_to 'Add a Book', new_book_path %></p>
+<p><%= link_to 'Add a Book', new_book_path, class: "button" %></p>
 
 <div id="holdings_table" class="book_index">
     <div class="book_index_header_row">
-        <div id="header_book_title" class="book_index_header_cell">Book Title</div>
-        <div id="header_author" class="book_index_header_cell">Author</div>
-        <div id="header_description" class="book_index_header_cell">Description</div>
-        <div id="header_link" class="book_index_header_cell">Link</div>
-        <div id="header_pagination" class="book_index_header_cell"># of Pages</div>
-        <div id="header_format" class="book_index_header_cell">Format</div>
-        <div id="header_show" class="book_index_header_cell">&nbsp;</div>
-        <div id="header_edit" class="book_index_header_cell">&nbsp;</div>
-        <div id="header_delete" class="book_index_header_cell">&nbsp;</div>
+        <div id="header_book_title" class="book_index_header_cell title">Book Title</div>
+        <div id="header_author" class="book_index_header_cell author">Author</div>
+        <div id="header_description" class="book_index_header_cell description">Description</div>
+        <div id="header_link" class="book_index_header_cell link">Link</div>
+        <div id="header_pagination" class="book_index_header_cell pagination">Pages</div>
+        <div id="header_format" class="book_index_header_cell format">Format</div>
+        <div id="header_show" class="book_index_header_cell shed">&nbsp;</div>
+        <div id="header_edit" class="book_index_header_cell shed">&nbsp;</div>
+        <div id="header_delete" class="book_index_header_cell shed">&nbsp;</div>
     </div>
     <div id="book_index_detail_wrapper"><% @books.each do |book| %>
         <div class="book_index_detail_row">
@@ -22,9 +22,9 @@
             <div class="book_index_detail_cell link"><%= link_to 'GoodReads Link', "#{book.url}" %></div>
             <div class="book_index_detail_cell pagination"><%= book.pagination %></div>
             <div class="book_index_detail_cell format"><%= book.format %></div>
-            <div class="book_index_detail_cell show_link"><%= link_to 'Show', book_path(book) %></div>
-            <div class="book_index_detail_cell edit_link"><%= link_to 'Edit', edit_book_path(book) %></div>
-            <div class="book_index_detail_cell delete_link"><%= link_to 'Delete', book_path(book),
+            <div class="book_index_detail_cell show_link shed"><%= link_to 'Show', book_path(book) %></div>
+            <div class="book_index_detail_cell edit_link shed"><%= link_to 'Edit', edit_book_path(book) %></div>
+            <div class="book_index_detail_cell delete_link shed"><%= link_to 'Delete', book_path(book),
                             method: :delete,
                             data: { confirm: 'Are you Sure?' } %></div>
         </div><% end %>
@@ -38,4 +38,4 @@
  , class: "book_index_row" %>
 
 
-<p><%= link_to 'Add a Book', new_book_path %></p>
+<p><%= link_to 'Add a Book', new_book_path, class: "button" %></p>
