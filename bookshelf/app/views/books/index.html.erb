@@ -1,6 +1,7 @@
 <h1>Joanna's Freeshelf project</h1>
+<h2>Book List</h2>
 
-<p><%= link_to 'Add a Book', new_book_path, class: "button" %></p>
+<%= render 'button' %>
 
 <div id="holdings_table" class="book_index">
     <div class="book_index_header_row">
@@ -31,11 +32,4 @@
     </div>
 </div>
 
-
-<%# content_tag(:div,
-    content_tag(:div, "#{book.title}", class: "book_index_cell", id: "book_title")
-
- , class: "book_index_row" %>
-
-
-<p><%= link_to 'Add a Book', new_book_path, class: "button" %></p>
+<%= render 'button' %>

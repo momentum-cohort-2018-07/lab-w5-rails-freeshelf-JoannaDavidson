@@ -1,0 +1,29 @@
+<h1>Joanna's Freeshelf project</h1>
+<h2>User List</h2>
+
+<%= render 'button' %>
+
+<div id="holdings_table" class="user_index">
+    <div class="user_index_header_row">
+        <div id="header_user_name" class="user_index_header_cell name">User Name</div>
+        <div id="header_email" class="user_index_header_cell email">Email address</div>
+        <div id="header_city" class="user_index_header_cell city">City</div>
+        <div id="header_show" class="user_index_header_cell shed">&nbsp;</div>
+        <div id="header_edit" class="user_index_header_cell shed">&nbsp;</div>
+        <div id="header_delete" class="user_index_header_cell shed">&nbsp;</div>
+    </div>
+    <div id="user_index_detail_wrapper"><% @users.each do |user| %>
+        <div class="user_index_detail_row">
+            <div class="user_index_detail_cell name"><%= user.name %></div>
+            <div class="user_index_detail_cell email"><%= user.email %></div>
+            <div class="user_index_detail_cell city"><%= user.city %></div>
+            <div class="user_index_detail_cell show_link shed"><%= link_to 'Show', user_path(user) %></div>
+            <div class="user_index_detail_cell edit_link shed"><%= link_to 'Edit', edit_user_path(user) %></div>
+            <div class="user_index_detail_cell delete_link shed"><%= link_to 'Delete', user_path(user),
+                            method: :delete,
+                            data: { confirm: 'Are you Sure?' } %></div>
+        </div><% end %>
+    </div>
+</div>
+
+<%= render 'button' %>
