@@ -19,8 +19,10 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
-            redirect_to @user
+            @save_success = 'Y'
+            render 'new'
         else
+            @save_success = 'N'
             render 'new'
         end
     end
@@ -29,8 +31,10 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
 
         if @user.update(user_params)
-            redirect_to @user
+            @save_success = 'Y'
+            render 'edit'
         else
+            @save_success = 'N'
             render 'edit'
         end
     end

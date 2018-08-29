@@ -12,6 +12,11 @@
         <% end %>
       </ul>
     </div>
+  <% elsif @save_success === 'Y' %>
+    <div id="success_explanation">
+       <h3>Save Successful!</h3>
+      </div>
+    <% @save_success = '' %>
   <% end %>
 
   <p>

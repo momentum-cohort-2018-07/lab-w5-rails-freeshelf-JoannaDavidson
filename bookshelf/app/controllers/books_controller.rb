@@ -30,6 +30,7 @@ class BooksController < ApplicationController
         @book = Book.find(params[:id])
 
         if @book.update(book_params)
+
             redirect_to @book
         else
             render 'edit'
@@ -49,3 +50,4 @@ private
     end
 
 end
+

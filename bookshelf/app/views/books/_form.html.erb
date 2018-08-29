@@ -2,21 +2,26 @@
 
   <% if @book.errors.any? %>
     <div id="error_explanation">
-      <h2>
+      <h3>
         <%= pluralize(@book.errors.count, "error") %> prohibited
         this article from being saved:
-      </h2>
+      </h3>
       <ul>
         <% @book.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
+  <% elsif @save_success === 'Y' %>
+    <div id="success_explanation">
+       <h3>Save Successful!</h3>
+      </div>
+    <% @save_success = '' %>
   <% end %>
 
   <p>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title %> 
   </p>
   <p>
     <%= form.label :author %><br>
