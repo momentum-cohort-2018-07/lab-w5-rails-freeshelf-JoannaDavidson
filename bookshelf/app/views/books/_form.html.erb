@@ -1,3 +1,4 @@
+
 <%= form_with model: @book, local: true do |form| %>
 
   <% if @book.errors.any? %>
@@ -42,6 +43,15 @@
   <p>
     <%= form.label :format %><br>
     <%= form.text_field :format %>
+  </p>
+  <p>
+    <%= form.label :user_id %><br>
+    <%= form.select :user_id do %>
+      <% uid = User.all %>
+      <% uid.each do |u| %>
+        <%= content_tag(:option, u.name, value: u.id)%>
+      <% end %>
+    <% end %>
   </p>
 
   <p>

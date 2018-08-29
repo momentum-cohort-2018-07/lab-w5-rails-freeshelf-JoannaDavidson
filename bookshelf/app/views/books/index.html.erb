@@ -11,6 +11,7 @@
         <div id="header_link" class="book_index_header_cell link">Link</div>
         <div id="header_pagination" class="book_index_header_cell pagination">Pages</div>
         <div id="header_format" class="book_index_header_cell format">Format</div>
+        <div id="header_owner" class="book_index_header_cell owner">Owner</div>
         <div id="header_show" class="book_index_header_cell shed">&nbsp;</div>
         <div id="header_edit" class="book_index_header_cell shed">&nbsp;</div>
         <div id="header_delete" class="book_index_header_cell shed">&nbsp;</div>
@@ -20,9 +21,13 @@
             <div class="book_index_detail_cell title"><%= book.title %></div>
             <div class="book_index_detail_cell author"><%= book.author %></div>
             <div class="book_index_detail_cell description"><%= book.description %></div>
-            <div class="book_index_detail_cell link"><%= link_to 'GoodReads Link', "#{book.url}" %></div>
+            <div class="book_index_detail_cell link"><%= link_to 'GoodReads', "#{book.url}" %></div>
             <div class="book_index_detail_cell pagination"><%= book.pagination %></div>
             <div class="book_index_detail_cell format"><%= book.format %></div>
+            <div class="book_index_detail_cell owner"><% if book.user %>
+                                <% uid = book.user %>
+                                <%= uid.name %>
+                                <% end %></div>
             <div class="book_index_detail_cell show_link shed"><%= link_to 'Show', book_path(book) %></div>
             <div class="book_index_detail_cell edit_link shed"><%= link_to 'Edit', edit_book_path(book) %></div>
             <div class="book_index_detail_cell delete_link shed"><%= link_to 'Delete', book_path(book),
