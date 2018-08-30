@@ -14,7 +14,18 @@
  *= require_self
  */
 
- #error_explanation {
+\* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
+
+html {
+    background-color: #fff9de;
+}
+
+#error_explanation {
     width: 20%;
     color: #ff1111;
     border: 3px solid #ff1111;
@@ -29,3 +40,27 @@
     border-radius: 10px;
     text-align: center;
  }
+
+ .session_banner {
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     text-align: center;
+     line-height: 2em;
+     color: #ffffff;
+}
+
+.session_banner a:link,
+.session_banner a:visited,
+.session_banner a:hover,
+.session_banner a:active {
+    color: #ffffff;
+}
+
+.sb_logged_in {
+    background-color: #5577ff;
+}
+
+.sb_not_logged {
+    background-color: #ff1111;
+}

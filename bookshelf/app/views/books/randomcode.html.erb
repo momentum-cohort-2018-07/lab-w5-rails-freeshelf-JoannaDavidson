@@ -3,7 +3,7 @@
     <%= form.select :user_id do %>
       <% uid = book.user %>
       <% uid.each do |u| %>
-        <% content_tag(:option, u.name, value: u.id)%>
+        <%= content_tag(:option, u.name, value: u.id)%>
       <% end %>
     <% end %>
   </p>
