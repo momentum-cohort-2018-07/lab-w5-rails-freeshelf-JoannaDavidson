@@ -1,0 +1,66 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+\* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Open Sans;
+}
+
+html {
+    background-color: #fff9de;
+}
+
+#error_explanation {
+    width: 20%;
+    color: #ff1111;
+    border: 3px solid #ff1111;
+    border-radius: 10px;
+    text-align: center;
+ }
+
+ #success_explanation {
+    width: 20%;
+    color: #11cc11;
+    border: 3px solid #11cc11;
+    border-radius: 10px;
+    text-align: center;
+ }
+
+ .session_banner {
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     text-align: center;
+     line-height: 2em;
+     color: #ffffff;
+}
+
+.session_banner a:link,
+.session_banner a:visited,
+.session_banner a:hover,
+.session_banner a:active {
+    color: #ffffff;
+}
+
+.sb_logged_in {
+    background-color: #5577ff;
+}
+
+.sb_not_logged {
+    background-color: #ff1111;
+}

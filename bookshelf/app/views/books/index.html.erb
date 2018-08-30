@@ -1,0 +1,53 @@
+<h1>Joanna's Freeshelf project</h1>
+<h2>Book List</h2>
+
+<%= render 'button' %>
+
+<div id="holdings_table" class="book_index">
+    <div class="book_index_header_row">
+        <div id="header_book_title" class="book_index_header_cell title">Book Title</div>
+        <div id="header_author" class="book_index_header_cell author">Author</div>
+        <div id="header_description" class="book_index_header_cell description">Description</div>
+        <div id="header_link" class="book_index_header_cell link">Link</div>
+        <div id="header_pagination" class="book_index_header_cell pagination">Pages</div>
+        <div id="header_format" class="book_index_header_cell format">Format</div>
+        <div id="header_owner" class="book_index_header_cell owner">Owner</div>
+        <%#<div id="header_circ" class="book_index_header_cell circ">Borrower</div>%>
+        <div id="header_show" class="book_index_header_cell shed">&nbsp;</div>
+        <div id="header_edit" class="book_index_header_cell shed">&nbsp;</div>
+        <div id="header_delete" class="book_index_header_cell shed">&nbsp;</div>
+    </div>
+    <div id="book_index_detail_wrapper"><% @books.each do |book| %>
+        <div class="book_index_detail_row">
+            <div class="book_index_detail_cell title"><%= book.title %></div>
+            <div class="book_index_detail_cell author"><%= book.author %></div>
+            <div class="book_index_detail_cell description"><%= book.description %></div>
+            <div class="book_index_detail_cell link"><%= link_to 'GoodReads', "#{book.url}" %></div>
+            <div class="book_index_detail_cell pagination"><%= book.pagination %></div>
+            <div class="book_index_detail_cell format"><%= book.format %></div>
+            <div class="book_index_detail_cell owner"><% if book.user %>
+                                <% uid = book.user %>
+                                <%= uid.name %>
+                                <% end %></div>
+            <%# <div class="book_index_detail_cell circ"><% if book.borrower %
+                                <% bid = book.borrower %
+                                <%= bid.name %
+                                <% end % </div> %>
+            <div class="book_index_detail_cell show_link shed"><%= link_to 'Show', book_path(book) %></div>
+            <% if current_user && current_user.id === book.user.id %>
+                <div class="book_index_detail_cell edit_link shed"><%= link_to 'Edit', edit_book_path(book) %></div>
+                <div class="book_index_detail_cell delete_link shed"><%= link_to 'Delete', book_path(book),
+                            method: :delete,
+                            data: { confirm: 'Are you Sure?' } %></div>
+            <% else %>
+                <div class="book_index_detail_cell edit_link shed">Edit</div>
+                <div class="book_index_detail_cell delete_link shed">Delete</div>
+            <% end %>
+        </div><% end %>
+    </div>
+</div>
+
+<%= render 'button' %>
+
+<p><%= link_to 'User List', users_path %></p>
+

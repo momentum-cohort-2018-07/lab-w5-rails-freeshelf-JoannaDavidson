@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookshelf</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'https://fonts.googleapis.com/css?family=Open+Sans:400,700|Oswald:400,700', media: 'all'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user %>
+      <%= content_tag(:div, content_tag(:p, link_to("You are logged in as #{current_user.name}. Click here to Logout", '/logout' ), :class=>nil),
+        class: "session_banner sb_logged_in") %>
+    <% else %>
+      <%= content_tag(:div, content_tag(:p, link_to('You are not logged in. Click here to Log In', new_session_path), :class=>nil),
+        class: "session_banner sb_not_logged") %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+// Place all the styles related to the Books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.book_index {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #000000;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.book_index_header_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+}
+
+.book_index_header_cell {
+    width: 5%;
+    margin: 0;
+    padding: 5px 0px;
+    color: #ffffff;
+    text-align: center;
+}
+
+#header_description {
+    width: 18%;
+}
+
+#header_owner,
+#header_author {
+    width: 10%;
+    text-align: center;
+}
+
+#book_index_detail_wrapper {
+
+}
+
+.book_index_detail_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-top: 2px solid #000000;
+}
+
+.book_index_detail_row:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.book_index_detail_cell {
+    width: 5%;
+    padding: 5px 0px;
+}
+
+.description {
+    width: 18%;
+}
+
+.owner,
+.author {
+    width: 10%;
+    text-align: center;
+}
+
+.shed,
+.pagination {
+    width: 10px;
+    text-align: center;
+}
+
+.format {
+    width: 5%
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+}
+
+.title {
+    width: 20%;
+}

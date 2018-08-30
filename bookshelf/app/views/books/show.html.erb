@@ -1,0 +1,11 @@
+<p><%= link_to 'Home', "/"%> > Book Detail > </p>
+
+<h1><%= link_to "#{@book.title}", "#{@book.url}" %></h1>
+<h3>by: <%= @book.author %></h3>
+
+<p><%= @book.description %></p>
+
+<ul>
+    <li><%= @book.pagination %> pages</li>
+    <li><%= @book.format %></li>
+</ul>    

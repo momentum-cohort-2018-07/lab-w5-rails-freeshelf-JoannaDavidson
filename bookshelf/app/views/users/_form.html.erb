@@ -1,0 +1,45 @@
+<%= form_with model: @user, local: true do |form| %>
+
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@user.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% elsif @save_success === 'Y' %>
+    <div id="success_explanation">
+       <h3>Save Successful!</h3>
+      </div>
+    <% @save_success = '' %>
+  <% end %>
+
+  <p>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </p>
+  <p>
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+  </p>
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password %>
+  </p>
+  <p>
+    <%= form.label :password_confirmation %><br>
+    <%= form.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

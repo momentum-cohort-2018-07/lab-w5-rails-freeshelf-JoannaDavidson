@@ -1,0 +1,28 @@
+<h1>Joanna's Freeshelf project</h1>
+<h3>Login</h3>
+
+<% if flash[:notice] %>
+<p class="alert alert-success"><%= flash[:notice] %></p>
+<% end %>
+<% if flash[:error_message]%>
+<p class="alert alert-danger"><%= flash[:error_message] %></p>
+<% end %>
+
+<%= form_with(url: session_path) do |form| %>
+
+<p>
+  <%= form.label :email %><br>
+  <%= form.text_field :email %> 
+</p>
+<p>
+  <%= form.label :password %><br>
+  <%= form.password_field :password %>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+
+<% end %>
+
+<%= link_to 'Back', '/' %>
